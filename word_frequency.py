@@ -18,7 +18,7 @@ def open_file(file):
         # file remains open for the indented lines under here
         read_file = opened_file.read()
         # remove punctuation
-        stripped_file = remove_punctuation(read_file)
+        stripped_file = remove_punctuation(read_file).lower()
         word_list = stripped_file.split()
         print(word_list)
 
