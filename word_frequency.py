@@ -5,9 +5,19 @@ STOP_WORDS = [
 ]
 
 
+def open_file(file):
+    '''Uses `open` to read a text file'''
+    with open(file) as opened_file:
+        # file remains open for the indented lines under here
+        read_file = opened_file.read()
+        word_list = read_file.split()
+        print(word_list)
+
+
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
-    pass
+    # use `open` to read a text file 
+    open_file(file)
 
 
 if __name__ == "__main__":
