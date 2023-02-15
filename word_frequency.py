@@ -11,6 +11,12 @@ def remove_punctuation(words):
     stripped_file = words.translate(str.maketrans('', '', string.punctuation))
     return stripped_file
 
+def remove_stop_words(word_list):
+    cleaned_list = []
+    for word in word_list:
+        if word not in STOP_WORDS:
+            cleaned_list.append(word)
+    return cleaned_list
 
 def open_file(file):
     '''Uses `open` to read a text file'''
@@ -20,13 +26,16 @@ def open_file(file):
         # remove punctuation
         stripped_file = remove_punctuation(read_file).lower()
         word_list = stripped_file.split()
-        print(word_list)
+        cleaned_list = remove_stop_words(word_list)
+        print(cleaned_list)
 
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
     # use `open` to read a text file 
-    open_file(file)
+    words_to_count = open_file(file)
+    word_count = {}
+    # loop through the list of words, and updated the dictionary to indicate how many of each we have 
 
 
 if __name__ == "__main__":
