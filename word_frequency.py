@@ -51,13 +51,30 @@ def print_word_freq(file):
         else:
             word_count[word] = 1
     sorted_dictionary = sort_dictionary(word_count)
-    print(sorted_dictionary)
+    for item in sorted_dictionary:
+        thing, count = item
+        print(thing, count)
+    #     number_of_asterisks = (20 * word ) // word_count
+    # asterisks = '*' * number_of_asterisks
+    # print('{:>20} {}'.format(asterisks, word))
+    # print(sorted_dictionary)
     return sorted_dictionary
 
+#      we | 7 *******
+#    each | 5 *****
+#      or | 5 *****
+#    need | 5 *****
+#    love | 5 *****
+#   about | 4 ****
+#  praise | 4 ****
+#    song | 4 ****
+#     day | 3 ***
+#     our | 3 ***
 
 if __name__ == "__main__":
     import argparse
     from pathlib import Path
+
 
     parser = argparse.ArgumentParser(
         description='Get the word frequency in a text file.')
